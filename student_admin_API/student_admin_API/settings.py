@@ -82,9 +82,13 @@ WSGI_APPLICATION = 'student_admin_API.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'uni_std_admin',
+        'USER': 'admin',
+        'PASSWORD': 'admin',
+        'PORT': '5433',
     }
+
 }
 
 
