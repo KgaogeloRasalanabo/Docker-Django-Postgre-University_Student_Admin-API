@@ -6,4 +6,3 @@ urlpatterns = [
     path('student_administration', views.student_administration_Api),
     path('student_administration/([0-9]+)/', views.student_administration_Api),
 ]
-
