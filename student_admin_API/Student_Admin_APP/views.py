@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
-
 from Student_Admin_APP.models import Student_administration
 from Student_Admin_APP.serializers import Student_administration_Serializer
 
@@ -23,14 +22,14 @@ def student_administration_Api(request,id=0):
         return JsonResponse("Failed to Add",safe=False)
     elif request.method == 'PUT':
         student_administration_data = JSONParser().parse(request)
-        student_administration = Student_administration.objects.get(Student_administration_Id = student_administration_data['Student_administration_Id'])
+        student_administration = Student_administration.objects.get(id_no = student_administration_data['id_no'])
         student_administration__serializer = Student_administration_Serializer(student_administration,data=student_administration_data)
         if student_administration__serializer.is_valid():
             student_administration__serializer.save()
             return JsonResponse("Update Successfully",safe=False)
         return JsonResponse("Failed to Update",safe=False)
     elif request.method == 'DELETE':
-        student_administration = Student_administration.objects.get(Student_administration_Id=id)
+        student_administration = Student_administration.objects.get(id_no=id)
         student_administration.delete()
         return JsonResponse("Deleted Succefully")
     
