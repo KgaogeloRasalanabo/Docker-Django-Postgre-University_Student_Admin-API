@@ -10,3 +10,4 @@ class Student_administration(models.Model):
     course_id = models.CharField(max_length=20)
     course_name = models.TextField(max_length=200)
     Course_code = models.CharField(max_length=20)
+    
