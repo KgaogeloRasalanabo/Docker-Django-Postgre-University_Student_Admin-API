@@ -32,4 +32,3 @@ def student_administration_Api(request,id=0):
         student_administration = Student_administration.objects.get(id=id)
         student_administration.delete()
         return JsonResponse("Deleted Succefully")
-    
