@@ -89,7 +89,6 @@ DATABASES = {
         "NAME": "uni_std_admin",
         "USER": "admin",
         "PASSWORD": "admin",
-        "HOST": "db",  # set in docker-compose.yml
         "PORT": 5433,  # default postgres port	
   }
 
