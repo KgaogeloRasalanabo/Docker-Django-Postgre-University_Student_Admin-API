@@ -86,10 +86,11 @@ WSGI_APPLICATION = 'student_admin_API.wsgi.application'
 DATABASES = {
     'default': {	
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "uni_std_admin",
-        "USER": "admin",
-        "PASSWORD": "admin",
-        "PORT": 5433,  # default postgres port	
+        "NAME": "postgres",
+        "USER": "postgres",
+        "PASSWORD": "postgres",
+        "HOST": "db",  # set in docker-compose.yml
+        "PORT": 5432,  # default postgres port	
   }
 
 }
